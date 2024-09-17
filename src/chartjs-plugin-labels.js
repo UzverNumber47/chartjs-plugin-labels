@@ -241,6 +241,23 @@
     return fontColor;
   };
 
+  Label.prototype.getFontSize = function (dataset, element, index) {
+    var fontSize = this.options.fontSize;
+    if (typeof fontSize === 'function') {
+      fontSize = fontSize({
+        label: this.chart.config.data.labels[index],
+        value: dataset.data[index],
+        percentage: this.getPercentage(dataset, element, index),
+        backgroundColor: dataset.backgroundColor[index],
+        dataset: dataset,
+        index: index
+      });
+    } else if (typeof fontSize !== 'number') {
+      fontSize = fontSize[index] || this.chart.config.options.defaultFontSize;
+    }
+    return fontSize;
+  };
+
   Label.prototype.getPercentage = function (dataset, element, index) {
     if (this.percentage !== null) {
       return this.percentage;
