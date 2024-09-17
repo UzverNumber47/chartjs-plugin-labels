@@ -99,7 +99,7 @@
     ctx.save();
     ctx.font = Chart.helpers.fontString(this.getFontSize(index), this.options.fontStyle, this.options.fontFamily);
     var renderInfo = this.getRenderInfo(element, label, index);
-    if (!this.drawable(element, label, renderInfo)) {
+    if (!this.drawable(element, label, renderInfo, index)) {
       ctx.restore();
       return;
     }
