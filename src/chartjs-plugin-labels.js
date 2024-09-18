@@ -242,7 +242,6 @@
   };
 
   Label.prototype.getFontSize = function (index) {
-    console.log('getFontSize function call');
     var fontSize = this.options.fontSize;
     if (typeof fontSize === 'function') {
       fontSize = fontSize(index);
