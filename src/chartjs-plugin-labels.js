@@ -242,7 +242,7 @@
   };
 
   Label.prototype.getFontSize = function (index) {
-    var fontSize = this.getFontSize(index);
+    var fontSize = this.options.fontColor;
     if (typeof fontSize === 'function') {
       fontSize = fontSize(index);
     } else if (typeof fontSize !== 'number') {
